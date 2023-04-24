@@ -24,6 +24,8 @@ const App = () => {
 // Centralizar setState en una función que devuelva el nuevo estado
 // Reducer
 
+// Escribir correctamente action.type, payload
+
 // const useCounter = () => {
 // 	const [value, setValue] = useState(0);
 // 	const [step, setStep] = useState(1);
@@ -147,24 +149,24 @@ const App = () => {
 // 	};
 // };
 
-const counterReducer = (counter, action) => {
+const counterReducer = (state, action) => {
 	switch (action) {
 		case 'increment':
 			return {
-				...counter,
-				value: counter.value + counter.step,
-				clicks: counter.clicks + 1
+				...state,
+				value: state.value + state.step,
+				clicks: state.clicks + 1
 			};
 		case 'decrement':
 			return {
-				...counter,
-				value: counter.value - counter.step,
-				clicks: counter.clicks + 1
+				...state,
+				value: state.value - state.step,
+				clicks: state.clicks + 1
 			};
 		case 'addStep':
 			return {
-				...counter,
-				step: counter.step + 1
+				...state,
+				step: state.step + 1
 			};
 		case 'reset':
 			return { value: 0, step: 1, clicks: 0 };
