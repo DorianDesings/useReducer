@@ -1,5 +1,10 @@
 import { COUNTER_ACTIONS } from '../actions/actions.counter';
 
+export const INITIAL_STATE_COUNTER = {
+	value: 0,
+	step: 1,
+	clicks: 0
+};
 export const counterReducer = (counter, action) => {
 	switch (action) {
 		case COUNTER_ACTIONS.INCREMENT:

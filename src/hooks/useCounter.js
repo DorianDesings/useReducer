@@ -1,12 +1,11 @@
 import { useReducer } from 'react';
-import { counterReducer } from '../reducers/counterReducer';
+import {
+	INITIAL_STATE_COUNTER,
+	counterReducer
+} from '../reducers/counterReducer';
 
 export const useCounter = () => {
-	const [counter, dispatch] = useReducer(counterReducer, {
-		value: 0,
-		step: 1,
-		clicks: 0
-	});
+	const [counter, dispatch] = useReducer(counterReducer, INITIAL_STATE_COUNTER);
 
 	return { counter, dispatch };
 };
